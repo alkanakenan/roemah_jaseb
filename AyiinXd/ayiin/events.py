@@ -90,26 +90,25 @@ async def get_user_from_event(
 
 async def ajg():
     try:
-        await bot(Get("Html12text"))
-        await bot(Get("kazusupportgrp"))
-        #await bot(Get("veaperas1k"))
-        #await bot(Get("kynansupport"))
+        await bot(Get("Roemahjaseb"))  # Ganti dengan grup sendiri
+        await bot(Get("RoemahjasebSupport"))
     except rpcerrorlist.ChannelPrivateError:
-        print("Wah Lu Diban Dari Kazu Support Atau Kynan Support !!! Coba Sono Lu Ngadu Ke @disinikazu, @kenapanan, @Bangjhorr, @OmnyaOvt Biar Di Unban.")
+        print("Sepertinya Anda belum join grup Roemahjaseb! Silakan join dulu.")
         sys.exit(1)
 
 
 async def checking(client):
-    gocheck = str(pybase64.b64decode("QEh0bWwxMnRleHQ="))[2:13]
-    checker = str(pybase64.b64decode("QGthenVzdXBwb3J0Z3Jw"))[2:17]
-    #checkxd = str(pybase64.b64decode("QHZlYXBlcmFzMWs="))[2:13]
-    #checksbt = str(pybase64.b64decode("QGt5bmFuc3VwcG9ydA=="))[2:14]
+    gocheck = str(pybase64.b64decode("QFJvZW1haGphc2Vi"))[2:13]
+    checker = str(pybase64.b64decode("QFJvZW1haGphc2ViU3VwcG9ydA=="))[2:24]
+    checkxd = str(pybase64.b64decode("QFJvZW1haGphc2ViU3VwcG9ydA=="))[2:24]
+    checksbt = str(pybase64.b64decode("QFJvZW1haGphc2Vi"))[2:13] 
     if client:
-        try:
-            await client(Get(gocheck))
-            await client(Get(checker))
-            #await client(Get(checkxd))
-            await client(Get(checksbt))
-        except rpcerrorlist.ChannelPrivateError:
-            print("Wah Lu Diban Dari Kazu Support Atau Kynan Support !!! Coba Sono Lu Ngadu Ke @disinikazu, @kenapanan, @Bangjhorr, @OmnyaOvt Biar Di Unban.")
-            sys.exit(1)
+    try:
+        await client(Get(gocheck))
+        await client(Get(checker))
+        await client(Get(checkxd))
+        await client(Get(checksbt))  
+        
+    except rpcerrorlist.ChannelPrivateError:
+        print("Sepertinya Anda belum bergabung di grup Roemahjaseb! Silakan join dulu agar bisa menggunakan bot ini.")
+        sys.exit(1)
