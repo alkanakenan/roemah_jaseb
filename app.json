@@ -1,7 +1,7 @@
 {
   "name": "roemahjaseb-Userbot",
   "description": "[roemahjaseb-Userbot] Selamat pakai, Luh songong gw Banting",
-  "logo": ""https://www.imghippo.com/i/e2526ZFU.jpg",
+  "logo": "https://www.imghippo.com/i/e2526ZFU.jpg",
   "keywords": ["telegram", "userbot", "roemahjaseb-Userbot", "modular", "python"],
   "repository": "https://github.com/alkanakenan/Roemahjaseb",
   "stack": "container",
