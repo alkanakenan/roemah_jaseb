@@ -59,7 +59,7 @@ async def autopilot():
         r = await bot(
             CreateChannelRequest(
                 title="K𝙰𝚉𝚄-U𝚂𝙴𝚁𝙱𝙾𝚃 Lᴏɢs",
-                about="» Group log Created by: Kazu Userbot\n\n» Support : @kazusupportgrp\n» Support: @Html12text",
+                about="» Group log Created by: roemahjaseb Userbot\n\n» Support : @roemahjasebsupport\n» Support: @literray",
                 megagroup=True,
             ),
         )
@@ -77,7 +77,7 @@ async def autopilot():
     channel = get_peer_id(chat)
     if isinstance(chat.photo, ChatPhotoEmpty):
         photo = await download_file(
-            "https://telegra.ph/file/f0383ed4de3a719e2eada.jpg", "photoyins.jpg"
+            "https://www.imghippo.com/i/e2526ZFU.jpg", "photoyins.jpg"
         )
         ll = await bot.upload_file(photo)
         try:
@@ -135,7 +135,7 @@ async def autobot():
             sys.exit(1)
     filogo = random.choice(
           [
-              "https://telegra.ph/file/4a7e1523892f591dd7158.jpg",
+              "https://www.imghippo.com/i/e2526ZFU.jpg",
               "AyiinXd/resources/logo.jpg",
           ]
     )
