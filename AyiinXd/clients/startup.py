@@ -1,9 +1,7 @@
-# Man - UserBot
-# Copyright (c) 2022 Man-Userbot
-# Credits: @mrismanaziz || https://github.com/mrismanaziz
-#
-# This file is a part of < https://github.com/mrismanaziz/Man-Userbot/ >
-# t.me/SharingUserbot & t.me/Lunatic0de
+# RoemahJaseb - UserBot
+# Copyright (c) 2025 RoemahJaseb
+# Original Credits: @mrismanaziz & @ionmusic || https://github.com/mrismanaziz & https://github.com/ionmusic
+# Modified by: RoemahJaseb || https://github.com/alkanakenan/Roemahjaseb
 
 import sys
 
@@ -23,8 +21,8 @@ from AyiinXd import (
 )
 from AyiinXd.modules.gcast import GCAST_BLACKLIST as GBL
 
-EOL = "EOL\nKazu-UserBot v{}, Copyright © 2021-2022 Kazu• <https://github.com/ionmusic>"
-MSG_BLACKLIST = "MAKANYA GA USAH BERTINGKAH GOBLOK, USERBOT {} GUA MATIIN NAJIS BANGET DIPAKE JAMET KEK LU.\nKazu-UserBot v{}, Copyright © 2021-2025 Kazu• <https://github.com/ionmusic>"
+EOL = "EOL\nRoemahJaseb-UserBot v{}, Copyright © 2025 RoemahJaseb• <https://github.com/alkanakenan/Roemahjaseb>"
+MSG_BLACKLIST = "AKUN INI TERDETEKSI DALAM DAFTAR HITAM DAN TELAH DINONAKTIFKAN.\nRoemahJaseb-UserBot v{}, Copyright © 2025 RoemahJaseb• <https://github.com/alkanakenan/Roemahjaseb>"
 
 
 async def ayiin_client(client):
@@ -33,13 +31,13 @@ async def ayiin_client(client):
 
 
 def multiayiin():
-    if 5063062493 not in DEVS:
+    if 6457358314 not in DEVS:
         LOGS.warning(EOL.format(version))
         sys.exit(1)
-    if -1001287188817 not in GBL:
+    if -1002174180776 not in GBL:
         LOGS.warning(EOL.format(version))
         sys.exit(1)
-    if 5063062493 not in DEFAULT:
+    if 6457358314 not in DEFAULT:
         LOGS.warning(EOL.format(version))
         sys.exit(1)
     failed = 0
