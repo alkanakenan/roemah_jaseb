@@ -253,7 +253,47 @@ async def dlyspam(event):
     addgvar("spamwork", True)
     await spam_function(event, reply, xnxx, sleeptimem, sleeptimet, DelaySpam=True)
 
+@ayiin_cmd(pattern="dspamfw ([\\s\\S]*)")
+async def dlyspam_fw(event):
+    if event.chat_id in BLACKLIST_CHAT:
+        return await event.edit(get_string("ayiin_1"))
+    input_str = "".join(event.text.split(maxsplit=1)[1:]).split(" ", 3)
+    
+    try:
+        sleeptimet = float(input_str[0])  # Jeda antar spam
+        counter = int(input_str[1])  # Jumlah spam
+        target_chat = input_str[2]  # Link grup/channel tujuan
+    except Exception:
+        return await eod(
+            event, f"Format salah!\nGunakan: `{cmd}dspamfw <jeda> <jumlah> <link channel/grup>`"
+        )
+    
+    reply = await event.get_reply_message()
+    if not reply:
+        return await eod(event, "Balas pesan yang ingin diforward dengan perintah!")
 
+    # Dapatkan ID dari link grup/channel
+    try:
+        entity = await event.client.get_entity(target_chat)
+        target_chat_id = entity.id
+    except Exception:
+        return await eod(event, "Gagal mendapatkan ID dari link yang diberikan.")
+
+    await event.delete()
+    addgvar("spamwork", True)
+
+    # Kirim spam ke target
+    for _ in range(counter):
+        if gvarstatus("spamwork") is None:
+            return
+        await event.client.send_message(target_chat_id, reply)
+        await asyncio.sleep(sleeptimet)
+
+    if BOTLOG_CHATID:
+        await event.client.send_message(
+            BOTLOG_CHATID, f"Spam terkirim ke `{target_chat}` sebanyak `{counter}` kali dengan jeda `{sleeptimet}` detik."
+        )
+        
 CMD_HELP.update(
     {
         "spam": f"**Plugin : **`spam`\
@@ -270,6 +310,8 @@ CMD_HELP.update(
         \n\n  »  **Perintah :** `{cmd}delayspam` <detik> <jumlah spam> <text>\
         \n  »  **Kegunaan : **Spam surat teks dengan huruf.\
         \n\n  •  **NOTE : Spam dengan Risiko Anda sendiri**\
+        \n\n  »  Perintah : {cmd}dspamfw <detik> <jumlah spam> <link yang ingin di forward>\
+        \n  »  Kegunaan : spam forward dari channel.\
     "
     }
 )
