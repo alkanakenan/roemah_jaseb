@@ -11,7 +11,7 @@
       "required": true
     },
     "API_HASH": {
-      "description": "Dapatkan API Hash di Grup »  https://t.me/kazusupportgrp » Lalu ketik /get api atau di web my.telegram.org",
+      "description": "Dapatkan API Hash di Grup »  https://t.me/roemahjasebsupport » Lalu ketik /get api atau di web my.telegram.org",
       "required": true
     },
      "STRING_SESSION": {
