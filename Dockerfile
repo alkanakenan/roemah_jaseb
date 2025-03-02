@@ -1,7 +1,5 @@
 FROM python:3.9
-RUN git clone -b Kazu-Userbot https://github.com/alkanakenan/Roemahjaseb /home/Kazuuserbot/ \
-    && chmod 777 /home/Kazuuserbot \
-    && mkdir /home/Kazuuserbot/bin/
+RUN git clone -b Master https://github.com/alkanakenan/Roemahjaseb /home/Kazuuserbot/
 
 COPY ./sample_config.env ./config.env* /home/Kazuuserbot/
 
